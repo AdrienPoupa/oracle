@@ -12,11 +12,10 @@ public class Welcome {
     private JPasswordField passwordField1;
     private JButton loginButton;
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Welcome");
-        frame.setContentPane(new Welcome().welcomeJPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
+    public void Welcome() {
+    }
+
+    public JPanel getWelcomeJPanel() {
+        return welcomeJPanel;
     }
 }
