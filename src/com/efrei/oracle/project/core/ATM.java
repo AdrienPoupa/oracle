@@ -42,7 +42,7 @@ public class ATM {
 
                 try {
                     statement = db.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                    data = statement.executeQuery("SELECT * FROM card");
+                    data = statement.executeQuery(" SELECT LOWER(TO_CHAR(RAWTOHEX(SYS.DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW('salut'), 1)))) FROM CARD;");
 
                     if (data.next()) {
                         System.out.println("Des lignes");
