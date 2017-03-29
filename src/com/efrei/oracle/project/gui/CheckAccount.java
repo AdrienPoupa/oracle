@@ -8,6 +8,23 @@ import javax.swing.*;
 public class CheckAccount {
     private JPanel checkAccount;
     private JLabel amountAvailableJLabel;
+
+    public JPanel getCheckAccount() {
+        return checkAccount;
+    }
+
+    public JLabel getAmountAvailableJLabel() {
+        return amountAvailableJLabel;
+    }
+
+    public JTable getHistoryTable() {
+        return historyTable;
+    }
+
+    public JLabel getAmountValueJLabel() {
+        return amountValueJLabel;
+    }
+
     private JTable historyTable;
     private JLabel amountValueJLabel;
 }

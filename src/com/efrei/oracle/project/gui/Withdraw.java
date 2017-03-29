@@ -11,4 +11,24 @@ public class Withdraw {
     private JLabel withdrawAmountJLabel;
     private JButton withdrawButton;
     private JFormattedTextField withdrawJFormattedTextField;
+
+    public JPanel getWithdrawJPanel() {
+        return withdrawJPanel;
+    }
+
+    public JLabel getWithdrawJLabel() {
+        return withdrawJLabel;
+    }
+
+    public JLabel getWithdrawAmountJLabel() {
+        return withdrawAmountJLabel;
+    }
+
+    public JButton getWithdrawButton() {
+        return withdrawButton;
+    }
+
+    public JFormattedTextField getWithdrawJFormattedTextField() {
+        return withdrawJFormattedTextField;
+    }
 }

@@ -7,6 +7,27 @@ import javax.swing.*;
  */
 public class LoggedIn {
     private JPanel loggedInJPanel;
+
+    public JPanel getLoggedInJPanel() {
+        return loggedInJPanel;
+    }
+
+    public JLabel getLoggedInJLabel() {
+        return loggedInJLabel;
+    }
+
+    public JButton getCheckAccountButton() {
+        return checkAccountButton;
+    }
+
+    public JButton getWithdrawButton() {
+        return withdrawButton;
+    }
+
+    public JButton getAddButton() {
+        return addButton;
+    }
+
     private JLabel loggedInJLabel;
     private JButton checkAccountButton;
     private JButton withdrawButton;

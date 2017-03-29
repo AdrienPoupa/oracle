@@ -33,11 +33,14 @@ public class ATM {
                 System.out.println(login);
                 System.out.println(password);
 
-                Connection db = Database.get();
+                // Open new window
+                new Central();
+
+                /*Connection db = Database.get();
 
                 Connection db = DBConnection.getConnection(getServletContext());
                 Statement statement = db.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                data = statement.executeQuery("SELECT * FROM members");
+                data = statement.executeQuery("SELECT * FROM members");*/
             });
         });
     }
