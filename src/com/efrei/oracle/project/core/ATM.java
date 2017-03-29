@@ -33,26 +33,12 @@ public class ATM {
             gui.getLoginButton().addActionListener(e -> {
                 String login = gui.getWelcomeTextField().getText();
                 String password = gui.getPasswordField1().getText();
-                System.out.println(login);
-                System.out.println(password);
 
-                Connection db = Database.get();
-                Statement statement = null;
-                ResultSet data;
-
-                try {
-                    statement = db.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                    data = statement.executeQuery(" SELECT LOWER(TO_CHAR(RAWTOHEX(SYS.DBMS_CRYPTO.HASH(UTL_RAW.CAST_TO_RAW('salut'), 1)))) FROM CARD;");
-
-                    if (data.next()) {
-                        System.out.println("Des lignes");
-                    }
-                    else{
-                        System.out.println("Aucune ligne");
-                    }
-
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
+                if(Security.checkLogin(login, password)){
+                    System.out.println("connexion réussie");
+                }
+                else{
+                    System.out.println("connexion échouée");
                 }
             });
         });
