@@ -3,6 +3,8 @@ package com.efrei.oracle.project.core;
 import com.efrei.oracle.project.gui.Welcome;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Adrien on 24/03/2017.
@@ -13,15 +15,26 @@ public class ATM {
     // Rentrer user/mdp
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                Welcome gui = new Welcome();
-                JFrame frame = new JFrame();
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.getContentPane().add(gui.getWelcomeJPanel());
-                frame.pack();
-                frame.setVisible(true);
-            }
+        SwingUtilities.invokeLater(() -> {
+            Welcome gui = new Welcome();
+            JFrame frame = new JFrame();
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.getContentPane().add(gui.getWelcomeJPanel());
+            frame.pack();
+            frame.setVisible(true);
+
+            gui.getLoginButton().addActionListener(new ActionListener() {
+
+                // Click on login button
+                // todo: check login/pwd
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String login = gui.getWelcomeTextField().getText();
+                    String password = gui.getPasswordField1().getText();
+                    System.out.println(login);
+                    System.out.println(password);
+                }
+            });
         });
     }
 

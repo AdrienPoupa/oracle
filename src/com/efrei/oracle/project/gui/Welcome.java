@@ -18,4 +18,16 @@ public class Welcome {
     public JPanel getWelcomeJPanel() {
         return welcomeJPanel;
     }
+
+    public JButton getLoginButton() {
+        return loginButton;
+    }
+
+    public JTextField getWelcomeTextField() {
+        return welcomeTextField;
+    }
+
+    public JPasswordField getPasswordField1() {
+        return passwordField1;
+    }
 }
