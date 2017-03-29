@@ -1,3 +1,5 @@
+-- connect as sys dba
+
 CREATE USER atm IDENTIFIED BY atm;
 
 ALTER USER atm DEFAULT TABLESPACE users;
@@ -6,7 +8,7 @@ GRANT CONNECT, RESOURCE TO atm;
 
 GRANT EXECUTE ON DBMS_CRYPTO TO ATM;
 
--- connect as atm/atm --
+-- connect as atm/atm
 
 CREATE TABLE USERS
 (
@@ -47,5 +49,4 @@ BEGIN
 END SHA1;
 
 INSERT INTO CARD(ID, CARD, PASSWORD, CREATED_AT, USER_ID) VALUES(1, '6666666666666666', '8ea15a38c4c1a177d509c85ef6623e23', TO_DATE('2003/05/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), 1);
-
 INSERT INTO USERS(ID, LASTNAME, FIRSTNAME, BANK, CREATED_AT) VALUES(1, 'Fabien', 'Beaujean', 'intern', TO_DATE('2003/05/03 21:02:44', 'yyyy/mm/dd hh24:mi:ss'));
