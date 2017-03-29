@@ -9,6 +9,8 @@ public class Welcome {
     private JLabel welcomeJLabel;
     private JTextField welcomeTextField;
     private JPanel welcomeJPanel;
+    private JPasswordField passwordField1;
+    private JButton loginButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Welcome");
