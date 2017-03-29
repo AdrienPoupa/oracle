@@ -36,7 +36,6 @@ public class Database {
 
     /**
      * Logout from database
-     * @return void
      */
     public static void logout(){
         try {

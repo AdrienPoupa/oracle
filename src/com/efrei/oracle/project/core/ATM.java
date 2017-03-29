@@ -1,10 +1,12 @@
 package com.efrei.oracle.project.core;
 
+import com.efrei.oracle.project.dao.Database;
 import com.efrei.oracle.project.gui.Welcome;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 
 /**
  * Created by Adrien on 24/03/2017.
@@ -30,6 +32,12 @@ public class ATM {
                 String password = gui.getPasswordField1().getText();
                 System.out.println(login);
                 System.out.println(password);
+
+                Connection db = Database.get();
+
+                Connection db = DBConnection.getConnection(getServletContext());
+                Statement statement = db.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                data = statement.executeQuery("SELECT * FROM members");
             });
         });
     }
