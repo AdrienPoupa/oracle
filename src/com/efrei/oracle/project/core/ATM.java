@@ -23,17 +23,13 @@ public class ATM {
             frame.pack();
             frame.setVisible(true);
 
-            gui.getLoginButton().addActionListener(new ActionListener() {
-
-                // Click on login button
-                // todo: check login/pwd
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    String login = gui.getWelcomeTextField().getText();
-                    String password = gui.getPasswordField1().getText();
-                    System.out.println(login);
-                    System.out.println(password);
-                }
+            // Click on login button
+            // todo: check login/pwd
+            gui.getLoginButton().addActionListener(e -> {
+                String login = gui.getWelcomeTextField().getText();
+                String password = gui.getPasswordField1().getText();
+                System.out.println(login);
+                System.out.println(password);
             });
         });
     }

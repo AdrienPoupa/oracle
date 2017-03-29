@@ -5,28 +5,48 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    //  Database url
-    static final String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
-    static final private String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
 
-    //  Database credentials
-    static final private String USER = "atm";
-    static final private String PASS = "atm";
+    private static Connection db;
 
     /**
      * Return database connection
      * @return Connection
      */
     public static Connection get() {
-        try{
-            Class.forName("oracle.jdbc.driver.OracleDriver");
+        final String DB_URL = "jdbc:oracle:thin:@localhost:1521:XE";
+        final String USER = "atm";
+        final String PASS = "atm";
 
-            return DriverManager.getConnection(DB_URL, USER, PASS);
+        if(Database.db == null) {
+            try {
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+                Database.db = DriverManager.getConnection(DB_URL, USER, PASS);
+
+                return Database.db;
+            } catch (SQLException | ClassNotFoundException e) {
+                System.out.println(e.getMessage());
+            }
         }
-        catch(SQLException | ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+        else{
+            return Database.db;
         }
 
         return null;
+    }
+
+    /**
+     * Logout from database
+     * @return void
+     */
+    public static void logout(){
+        try {
+            if(Database.db != null){
+                Database.db.close();
+                Database.db = null;
+            }
+        }
+        catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
