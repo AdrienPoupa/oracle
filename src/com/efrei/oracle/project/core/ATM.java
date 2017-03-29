@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * Created by Adrien on 24/03/2017.
@@ -33,16 +36,25 @@ public class ATM {
                 System.out.println(login);
                 System.out.println(password);
 
-                // Open new window
-                new Central();
+                Connection db = Database.get();
+                Statement statement = null;
+                ResultSet data;
 
-                /*Connection db = Database.get();
+                try {
+                    statement = db.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                    data = statement.executeQuery("SELECT * FROM card");
 
-                Connection db = DBConnection.getConnection(getServletContext());
-                Statement statement = db.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-                data = statement.executeQuery("SELECT * FROM members");*/
+                    if (data.next()) {
+                        System.out.println("Des lignes");
+                    }
+                    else{
+                        System.out.println("Aucune ligne");
+                    }
+
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
             });
         });
     }
-
 }
