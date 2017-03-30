@@ -6,29 +6,26 @@ import javax.swing.*;
  * Created by Adrien on 29/03/2017.
  */
 public class Withdraw {
+
     private JPanel withdrawJPanel;
+
+    private JLabel otherAmountJLabel;
     private JLabel withdrawJLabel;
     private JLabel withdrawAmountJLabel;
+
+    private JComboBox amountToWithdrawJComboBox;
+    private JFormattedTextField otherAmountJText;
+
     private JButton withdrawButton;
-    private JFormattedTextField withdrawJFormattedTextField;
 
-    public JPanel getWithdrawJPanel() {
-        return withdrawJPanel;
-    }
+    public JPanel getWithdrawJPanel() { return withdrawJPanel; }
 
-    public JLabel getWithdrawJLabel() {
-        return withdrawJLabel;
-    }
+    public JLabel getOtherAmountJLabel() { return otherAmountJLabel; }
+    public JLabel getWithdrawJLabel() { return withdrawJLabel; }
+    public JLabel getWithdrawAmountJLabel() { return withdrawAmountJLabel; }
 
-    public JLabel getWithdrawAmountJLabel() {
-        return withdrawAmountJLabel;
-    }
+    public JComboBox getAmountToWithdrawJComboBox() { return amountToWithdrawJComboBox; }
+    public JFormattedTextField getOtherAmountJText() { return otherAmountJText; }
 
-    public JButton getWithdrawButton() {
-        return withdrawButton;
-    }
-
-    public JFormattedTextField getWithdrawJFormattedTextField() {
-        return withdrawJFormattedTextField;
-    }
+    public JButton getWithdrawButton() { return withdrawButton; }
 }

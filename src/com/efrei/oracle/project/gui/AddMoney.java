@@ -16,10 +16,14 @@ public class AddMoney {
     private JButton submitJButton;
 
     public JPanel getAddMoneyJPanel() { return addMoneyJPanel; }
+
     public JLabel getAddMoneyJLabel() { return addMoneyJLabel; }
     public JLabel getAmountToAddJLabel() { return amountToAddJLabel; }
     public JLabel getOtherAmountJLabel() { return otherAmountJLabel; }
+
     public JComboBox getAmountToAddJComboBox() { return amountToAddJComboBox; }
     public JFormattedTextField getOtherAmountJText() { return otherAmountJText; }
+    
     public JButton getSubmitJButton() { return submitJButton; }
+
 }
