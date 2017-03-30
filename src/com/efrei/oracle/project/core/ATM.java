@@ -35,10 +35,13 @@ public class ATM {
                 String password = gui.getPasswordField1().getText();
 
                 if(Security.checkLogin(login, password)){
-                    System.out.println("connexion réussie");
+                    System.out.println("Login success");
+                    new Central();
                 }
                 else{
-                    System.out.println("connexion échouée");
+                    System.out.println("Login failed");
+                    JOptionPane.showMessageDialog(new JFrame(), "Login failed", "Dialog",
+                            JOptionPane.ERROR_MESSAGE);
                 }
             });
         });
