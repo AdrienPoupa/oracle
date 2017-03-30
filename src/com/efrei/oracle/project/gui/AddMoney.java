@@ -23,7 +23,7 @@ public class AddMoney {
 
     public JComboBox getAmountToAddJComboBox() { return amountToAddJComboBox; }
     public JFormattedTextField getOtherAmountJText() { return otherAmountJText; }
-    
+
     public JButton getSubmitJButton() { return submitJButton; }
 
 }

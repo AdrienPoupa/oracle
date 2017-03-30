@@ -40,8 +40,7 @@ public class ATM {
                 }
                 else{
                     System.out.println("Login failed");
-                    JOptionPane.showMessageDialog(new JFrame(), "Login failed", "Error",
-                            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(new JFrame(), "Login failed", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             });
         });
