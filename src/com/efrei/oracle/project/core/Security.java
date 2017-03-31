@@ -15,7 +15,7 @@ class Security {
 
         try {
             //We check if it exists an account in the bank which manages this ATM
-
+            assert db != null;
             String loginStatement = "SELECT C.ID FROM CARD C INNER JOIN USERS U ON U.ID = C.USER_ID WHERE C.CARD = ? AND SHA1(C.PASSWORD) = SHA1(LOWER(MD5(?))) AND U.BANK = 'intern'";
             statement = db.prepareStatement(loginStatement);
             statement.setString(1, login);
@@ -43,5 +43,27 @@ class Security {
         }
 
         return false;
+    }
+
+    static int getCardId(String login){
+        Connection db = Database.get();
+        PreparedStatement statement = null;
+        ResultSet data;
+        int id = 1;
+
+        try {
+            String loginStatement = "SELECT C.ID FROM CARD C INNER JOIN USERS U ON U.ID = C.USER_ID WHERE C.CARD = ?";
+            statement = db.prepareStatement(loginStatement);
+            statement.setString(1, login);
+            data = statement.executeQuery();
+
+            while(data.next()){
+                id = data.getInt("ID");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return id;
     }
 }
