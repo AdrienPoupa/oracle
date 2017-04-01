@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18a4295-54bf-4bf3-875a-56f78e507bbf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/atm.sql" afterPath="$PROJECT_DIR$/atm.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/efrei/oracle/project/gui/CheckAccount.java" afterPath="$PROJECT_DIR$/src/com/efrei/oracle/project/gui/CheckAccount.java" />
-    </list>
+    <list default="true" id="b18a4295-54bf-4bf3-875a-56f78e507bbf" name="Default" comment="" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -743,7 +740,7 @@
       <workItem from="1490778333449" duration="10389000" />
       <workItem from="1490889601459" duration="25049000" />
       <workItem from="1491079584138" duration="1477000" />
-      <workItem from="1491083103187" duration="1907000" />
+      <workItem from="1491083103187" duration="1947000" />
     </task>
     <task id="LOCAL-00001" summary="Create classes">
       <created>1490374452152</created>
@@ -756,7 +753,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45486000" />
+    <option name="totallyTimeSpent" value="45526000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1046" extended-state="6" />
