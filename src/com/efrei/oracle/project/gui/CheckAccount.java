@@ -8,8 +8,6 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Vector;
 
 /**
  * Created by Adrien on 29/03/2017.
